@@ -13,9 +13,9 @@ export function ThemeToggle() {
             aria-label="Toggle theme"
         >
             {theme === 'light' ? (
-                <Sun className="h-5 w-5 text-[#1F3A4B] dark:text-[#FAFDEE]" />
+                <Sun className="h-5 w-5 text-black" />
             ) : (
-                <Moon className="h-5 w-5 text-[#1F3A4B] dark:text-[#FAFDEE]" />
+                <Moon className="h-5 w-5 text-black" />
             )}
         </button>
     );
