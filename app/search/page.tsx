@@ -8,7 +8,9 @@ import { searchBooks } from '@/store/features/summarySlice';
 import { Star, BookOpen, Clock, AlertCircle } from 'lucide-react';
 import { BookLoader } from '@/components/ui/BookLoader';
 
-export default function SearchPage() {
+import { Suspense } from 'react';
+
+function SearchPageContent() {
     const searchParams = useSearchParams();
     const query = searchParams.get('q');
     const router = useRouter();
@@ -134,5 +136,17 @@ export default function SearchPage() {
                 )}
             </div>
         </main>
+    );
+}
+
+export default function SearchPage() {
+    return (
+        <Suspense fallback={
+            <div className="py-24 flex items-center justify-center bg-[var(--background)]">
+                <BookLoader message="Loading search..." />
+            </div>
+        }>
+            <SearchPageContent />
+        </Suspense>
     );
 }
