@@ -15,8 +15,8 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: 'Summarix - Read any book in 10 minutes',
-  description: 'Get the key insights from non-fiction bestsellers in minutes.',
+  title: 'Summarix - Read any book in minutes',
+  description: 'Get the key insights from bestsellers in minutes.',
 };
 
 export default function RootLayout({
