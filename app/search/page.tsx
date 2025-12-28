@@ -58,7 +58,7 @@ function SearchPageContent() {
                 {/* Header */}
                 <div className="mb-8">
                     <h1 className="font-serif text-3xl font-bold text-[var(--foreground)] mb-2 pt-10">Search Results</h1>
-                    <p className="text-[var(--foreground)]/70">Found {searchResults.length} books for <span className="font-bold text-[var(--foreground)]">"{query}"</span></p>
+                    <p className="text-[var(--foreground)]">Found {searchResults.length} books for <span className="font-bold text-[var(--foreground)]">"{query}"</span></p>
                 </div>
 
                 {/* Results Grid */}
@@ -90,13 +90,13 @@ function SearchPageContent() {
                                         <h2 className="font-serif text-xl font-bold text-[var(--card-foreground)] leading-tight group-hover:underline decoration-2 underline-offset-2 mb-1">
                                             {book.title}
                                         </h2>
-                                        <p className="text-[var(--foreground)]/80 font-medium text-sm">by {book.author}</p>
+                                        <p className="text-[var(--foreground)] font-medium text-sm">by {book.author}</p>
                                     </div>
                                     {/* Badge */}
                                     <span className="px-2 py-1 bg-[var(--accent)] text-[var(--accent-foreground)] text-[10px] font-bold uppercase tracking-wider rounded-sm">Summarized</span>
                                 </div>
 
-                                <div className="flex items-center gap-3 text-xs text-[var(--foreground)]/60 mt-2 mb-4 font-medium">
+                                <div className="flex items-center gap-3 text-xs text-[var(--foreground)] mt-2 mb-4 font-medium">
                                     <span>{book.year}</span>
                                     <span className="w-1 h-1 bg-[var(--foreground)]/20 rounded-full"></span>
                                     <span>{book.pages}</span>
@@ -112,13 +112,13 @@ function SearchPageContent() {
                                             />
                                         ))}
                                     </div>
-                                    <span className="text-xs text-[var(--foreground)]/40">({book.ratingCount})</span>
+                                    <span className="text-xs text-[var(--foreground)]/60">({book.ratingCount})</span>
                                 </div>
 
                                 {/* Tags */}
                                 <div className="mt-auto flex flex-wrap gap-2">
                                     {book.tags.map(tag => (
-                                        <span key={tag} className="px-3 py-1 bg-[var(--input)] text-[var(--foreground)]/80 text-xs font-medium rounded-full">
+                                        <span key={tag} className="px-3 py-1 bg-[var(--input)] text-[var(--foreground)] text-xs font-medium rounded-full">
                                             {tag}
                                         </span>
                                     ))}

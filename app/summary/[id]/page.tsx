@@ -110,7 +110,7 @@ export default function SummaryPage() {
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
                         ) : (
-                            <span className="font-serif font-bold text-gray-300 text-2xl">COVER</span>
+                            <span className="font-serif font-bold text-gray-400 text-2xl">COVER</span>
                         )}
                     </div>
 
@@ -120,11 +120,11 @@ export default function SummaryPage() {
                             <h1 className="font-serif text-4xl md:text-5xl font-bold text-[var(--foreground)] leading-tight">
                                 {currentBook.title}
                             </h1>
-                            <p className="text-xl text-[var(--foreground)]/70">by <span className="underline decoration-1 underline-offset-4">{currentBook.author}</span></p>
-                            {currentBook.year && <p className="text-sm text-gray-500">Published {currentBook.year}</p>}
+                            <p className="text-xl text-[var(--foreground)]">by <span className="underline decoration-1 underline-offset-4">{currentBook.author}</span></p>
+                            {currentBook.year && <p className="text-sm text-gray-600">Published {currentBook.year}</p>}
                         </div>
 
-                        <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm text-gray-500 mt-4">
+                        <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm text-gray-600 mt-4">
                             <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" /> {currentBook.readTime || '10 min read'}</span>
                             <span className="flex items-center gap-1.5"><BookOpen className="h-4 w-4" /> Summary</span>
                         </div>
@@ -139,9 +139,9 @@ export default function SummaryPage() {
                     <div className="space-y-16">
                         {/* Idea in Brief */}
                         <section id="idea-in-brief" className="scroll-mt-24">
-                            <div className="bg-orange-50/10 p-6 rounded-2xl border border-orange-100/20">
-                                <h2 className="font-serif font-bold text-2xl mb-4 text-orange-600 dark:text-orange-400">The Idea in Brief</h2>
-                                <div className="text-[var(--foreground)] dark:text-gray-200 leading-relaxed font-medium">
+                            <div className="bg-orange-50/10 p-6 rounded-2xl border border-orange-200 shadow-sm">
+                                <h2 className="font-serif font-bold text-2xl mb-4 dark:text-orange-400">The Idea in Brief</h2>
+                                <div className="text-[var(--foreground)] leading-relaxed font-medium prose prose-orange max-w-none">
                                     <ReactMarkdown>{currentBook.ideaInBrief}</ReactMarkdown>
                                 </div>
                             </div>
@@ -149,14 +149,14 @@ export default function SummaryPage() {
 
                         {/* Key Takeaways */}
                         <section id="key-takeaways" className="scroll-mt-24">
-                            <h2 className="font-serif text-3xl font-bold mb-6 text-[var(--foreground)] dark:text-white">Key Takeaways</h2>
+                            <h2 className="font-serif text-3xl font-bold mb-6 text-[var(--foreground)]">Key Takeaways</h2>
                             <ul className="grid gap-4">
                                 {currentBook.keyTakeaways.map((point, index) => (
                                     <li key={index} className="flex gap-4 p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] hover:border-[var(--foreground)]/20 transition-colors">
                                         <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-[var(--background)] rounded-full shadow-sm font-serif font-bold text-sm border border-[var(--border)] text-[var(--foreground)]">
                                             {index + 1}
                                         </span>
-                                        <div className="text-[var(--foreground)]/80 leading-relaxed text-sm md:text-base">
+                                        <div className="text-[var(--foreground)] leading-relaxed text-sm md:text-base">
                                             <ReactMarkdown>{point}</ReactMarkdown>
                                         </div>
                                     </li>
@@ -167,12 +167,12 @@ export default function SummaryPage() {
                         {/* Plot Summary */}
                         {currentBook.plotSummary?.sections && (
                             <section id="plot-summary" className="scroll-mt-24">
-                                <h2 className="font-serif text-3xl font-bold mb-8 text-[var(--foreground)] dark:text-white">Plot Summary</h2>
+                                <h2 className="font-serif text-3xl font-bold mb-8 text-[var(--foreground)]">Plot Summary</h2>
                                 <div className="space-y-8">
                                     {currentBook.plotSummary.sections.map((section, idx) => (
                                         <div key={idx} id={`plot-${idx}`} className="scroll-mt-24">
-                                            <h3 className="font-serif text-xl font-bold text-[var(--foreground)] dark:text-white mb-3">{section.title}</h3>
-                                            <div className="text-[var(--foreground)]/80 dark:text-gray-300 leading-relaxed prose prose-slate max-w-none dark:prose-invert">
+                                            <h3 className="font-serif text-xl font-bold text-[var(--foreground)] mb-3">{section.title}</h3>
+                                            <div className="text-[var(--foreground)] leading-relaxed prose prose-slate max-w-none dark:prose-invert">
                                                 <ReactMarkdown>{section.content}</ReactMarkdown>
                                             </div>
                                         </div>
@@ -184,12 +184,12 @@ export default function SummaryPage() {
                         {/* Characters */}
                         {currentBook.characters && (
                             <section id="characters" className="scroll-mt-24">
-                                <h2 className="font-serif text-3xl font-bold mb-8 text-[var(--foreground)] dark:text-white">Characters</h2>
+                                <h2 className="font-serif text-3xl font-bold mb-8 text-[var(--foreground)]">Characters</h2>
                                 <div className="space-y-6">
                                     {currentBook.characters.map((character, idx) => (
                                         <div key={idx} id={`char-${idx}`} className="scroll-mt-24 p-6 bg-[var(--card)] rounded-xl border border-[var(--border)]">
-                                            <h3 className="font-serif text-xl font-bold text-[var(--foreground)] dark:text-white mb-3">{character.name}</h3>
-                                            <div className="text-[var(--foreground)]/80 dark:text-gray-300 leading-relaxed">
+                                            <h3 className="font-serif text-xl font-bold text-[var(--foreground)] mb-3">{character.name}</h3>
+                                            <div className="text-[var(--foreground)] leading-relaxed">
                                                 <ReactMarkdown>{character.description}</ReactMarkdown>
                                             </div>
                                         </div>
@@ -201,12 +201,12 @@ export default function SummaryPage() {
                         {/* Plot Devices */}
                         {currentBook.plotDevices && (
                             <section id="plot-devices" className="scroll-mt-24">
-                                <h2 className="font-serif text-3xl font-bold mb-8 text-[var(--foreground)] dark:text-white">Plot Devices</h2>
+                                <h2 className="font-serif text-3xl font-bold mb-8 text-[var(--foreground)]">Plot Devices</h2>
                                 <div className="space-y-6">
                                     {currentBook.plotDevices.map((device, idx) => (
-                                        <div key={idx} className="p-6 bg-blue-50/10 rounded-xl border border-blue-100/20">
-                                            <h3 className="font-serif text-xl font-bold text-blue-900 dark:text-blue-300 mb-3">{device.name}</h3>
-                                            <div className="text-[var(--foreground)]/80 dark:text-gray-300 leading-relaxed">
+                                        <div key={idx} className="p-6 bg-blue-50/50 rounded-xl border border-blue-100">
+                                            <h3 className="font-serif text-xl font-bold text-blue-900 mb-3">{device.name}</h3>
+                                            <div className="text-[var(--foreground)] leading-relaxed">
                                                 <ReactMarkdown>{device.description}</ReactMarkdown>
                                             </div>
                                         </div>
@@ -218,23 +218,23 @@ export default function SummaryPage() {
                         {/* Analysis */}
                         {currentBook.analysis && (
                             <section id="analysis" className="scroll-mt-24">
-                                <h2 className="font-serif text-3xl font-bold mb-8 text-[var(--foreground)] dark:text-white">Analysis</h2>
+                                <h2 className="font-serif text-3xl font-bold mb-8 text-[var(--foreground)]">Analysis</h2>
                                 <div className="space-y-8">
                                     <div>
-                                        <h3 className="font-serif text-xl font-bold text-[var(--foreground)] dark:text-white mb-3">Writing Style</h3>
-                                        <div className="text-[var(--foreground)]/80 dark:text-gray-300 leading-relaxed prose prose-slate max-w-none dark:prose-invert">
+                                        <h3 className="font-serif text-xl font-bold text-[var(--foreground)] mb-3">Writing Style</h3>
+                                        <div className="text-[var(--foreground)] leading-relaxed prose prose-slate max-w-none dark:prose-invert">
                                             <ReactMarkdown>{currentBook.analysis.writingStyle}</ReactMarkdown>
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 className="font-serif text-xl font-bold text-[var(--foreground)] dark:text-white mb-3">Psychological Depth</h3>
-                                        <div className="text-[var(--foreground)]/80 dark:text-gray-300 leading-relaxed prose prose-slate max-w-none dark:prose-invert">
+                                        <h3 className="font-serif text-xl font-bold text-[var(--foreground)] mb-3">Psychological Depth</h3>
+                                        <div className="text-[var(--foreground)] leading-relaxed prose prose-slate max-w-none dark:prose-invert">
                                             <ReactMarkdown>{currentBook.analysis.psychologicalDepth}</ReactMarkdown>
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 className="font-serif text-xl font-bold text-[var(--foreground)] dark:text-white mb-3">Emotional Impact</h3>
-                                        <div className="text-[var(--foreground)]/80 dark:text-gray-300 leading-relaxed prose prose-slate max-w-none dark:prose-invert">
+                                        <h3 className="font-serif text-xl font-bold text-[var(--foreground)] mb-3">Emotional Impact</h3>
+                                        <div className="text-[var(--foreground)] leading-relaxed prose prose-slate max-w-none dark:prose-invert">
                                             <ReactMarkdown>{currentBook.analysis.emotionalImpact}</ReactMarkdown>
                                         </div>
                                     </div>
@@ -245,12 +245,12 @@ export default function SummaryPage() {
                         {/* FAQ */}
                         {currentBook.faq && (
                             <section id="faq" className="scroll-mt-24">
-                                <h2 className="font-serif text-3xl font-bold mb-8 text-[var(--foreground)] dark:text-white">FAQ</h2>
+                                <h2 className="font-serif text-3xl font-bold mb-8 text-[var(--foreground)]">FAQ</h2>
                                 <div className="space-y-6">
                                     {currentBook.faq.map((item, idx) => (
                                         <div key={idx} className="border-b border-[var(--border)] pb-6 last:border-0">
-                                            <h3 className="font-serif text-lg font-bold text-[var(--foreground)] dark:text-white mb-3">{item.question}</h3>
-                                            <div className="text-[var(--foreground)]/80 dark:text-gray-300 leading-relaxed">
+                                            <h3 className="font-serif text-lg font-bold text-[var(--foreground)] mb-3">{item.question}</h3>
+                                            <div className="text-[var(--foreground)] leading-relaxed">
                                                 <ReactMarkdown>{item.answer}</ReactMarkdown>
                                             </div>
                                         </div>

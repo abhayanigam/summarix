@@ -25,7 +25,7 @@ const Skiper19 = () => {
       className="mx-auto flex h-[328vh] w-screen flex-col items-center overflow-hidden bg-[#FAFDEE] px-4 text-[#1F3A4B]"
     >
       <div className="mt-42 relative flex w-fit flex-col items-center justify-center gap-5 text-center">
-        <h1 className="font-jakarta-sans relative z-10 text-7xl font-medium tracking-[-0.08em] lg:text-9xl">
+        <h1 className="font-jakarta-sans relative z-10 text-7xl font-medium tracking-[-0.08em] lg:text-9xl !text-[#1F3A4B]">
           Unlock Wisdom <br /> In Minutes
         </h1>
         <p className="font-jakarta-sans relative z-10 max-w-2xl text-xl font-medium text-[#1F3A4B]">
@@ -39,7 +39,7 @@ const Skiper19 = () => {
       </div>
 
       <div className="rounded-4xl font-jakarta-sans w-full translate-y-[200vh] bg-[#1F3A4B] pb-10 text-[#FAFDEE] flex flex-col items-center">
-        <h1 className="mt-20 text-center text-[15.5vw] font-bold leading-[0.9] tracking-tighter lg:text-[16.6vw]">
+        <h1 className="mt-20 text-center text-[15.5vw] font-bold leading-[0.9] tracking-tighter lg:text-[16.6vw] !text-[#FAFDEE]">
           Summarix
         </h1>
 

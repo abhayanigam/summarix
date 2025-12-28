@@ -42,7 +42,7 @@ export const BookLoader: React.FC<BookLoaderProps> = ({ message = 'Loading' }) =
                     </li>
                 </ul>
             </div>
-            <span className="font-serif text-lg text-[var(--foreground)]/70 font-medium tracking-wide mt-6">{message}</span>
+            <span className="font-serif text-lg text-[var(--foreground)] font-medium tracking-wide mt-6">{message}</span>
         </div>
     );
 };

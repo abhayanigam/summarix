@@ -23,7 +23,7 @@ export function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${!isHome
-                ? 'bg-white/80 backdrop-blur-md border-b border-gray-200 py-3 shadow-sm'
+                ? 'bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border)] py-3 shadow-sm'
                 : 'bg-transparent py-5 border-transparent'
                 }`}
         >

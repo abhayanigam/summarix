@@ -3,15 +3,15 @@
 
 :root {
   --background: #FAFDEE;
-  --foreground: #1F3A4B;
+  --foreground: #000000;
   --card: #ffffff;
-  --card-foreground: #1F3A4B;
+  --card-foreground: #000000;
   --border: #e2e8f0;
   --input: #e2e8f0;
-  --primary: #1F3A4B;
+  --primary: #000000;
   --primary-foreground: #FAFDEE;
   --accent: #C2F84F;
-  --accent-foreground: #1F3A4B;
+  --accent-foreground: #000000;
 }
 
 .dark {
@@ -30,6 +30,7 @@
 @theme {
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
+  --dark-mode: class;
 }
 
 body {
@@ -38,3 +39,18 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--foreground) !important;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--foreground) !important;
+}

@@ -4,7 +4,6 @@ import "./globals.css";
 import { Providers } from "../store/providers";
 import { Header } from "@/components/ui/Header";
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { Skiper19 } from '@/components/ui/skiper19';
 
 
 // Load fonts
@@ -28,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${merriweather.variable} ${inter.variable} font-sans antialiased bg-white text-gray-900 min-h-screen flex flex-col`}
+        className={`${merriweather.variable} ${inter.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
         <Providers>
           <ThemeProvider>

@@ -61,10 +61,10 @@ export default function TableOfContents({ sections, bookTitle, author }: TableOf
     const TOCContent = () => (
         <>
             <div className="mb-6 pb-6 border-b border-[var(--border)]">
-                <h3 className="font-serif font-bold text-sm text-[var(--foreground)] dark:text-white leading-tight mb-1">
+                <h3 className="font-serif font-bold text-sm text-[var(--foreground)] leading-tight mb-1">
                     {bookTitle}
                 </h3>
-                <p className="text-xs text-[var(--foreground)]/60 dark:text-gray-400">by {author}</p>
+                <p className="text-xs text-[var(--foreground)] opacity-70">by {author}</p>
             </div>
 
             <nav className="space-y-1">
@@ -73,8 +73,8 @@ export default function TableOfContents({ sections, bookTitle, author }: TableOf
                         <button
                             onClick={() => scrollToSection(section.id)}
                             className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${activeSection === section.id
-                                ? 'bg-[var(--input)] text-[var(--foreground)] dark:text-white font-bold'
-                                : 'text-[var(--foreground)]/70 dark:text-gray-400 hover:bg-[var(--input)]/50 hover:text-[var(--foreground)] dark:hover:text-white'
+                                ? 'bg-[var(--input)] text-[var(--foreground)] font-bold'
+                                : 'text-[var(--foreground)] opacity-70 hover:bg-[var(--input)]/50 hover:text-[var(--foreground)] hover:opacity-100'
                                 }`}
                         >
                             {section.title}
@@ -87,8 +87,8 @@ export default function TableOfContents({ sections, bookTitle, author }: TableOf
                                         key={subsection.id}
                                         onClick={() => scrollToSection(subsection.id)}
                                         className={`w-full text-left px-3 py-1.5 rounded-lg text-xs transition-colors ${activeSection === subsection.id
-                                            ? 'text-[var(--foreground)] dark:text-white font-bold'
-                                            : 'text-[var(--foreground)]/60 dark:text-gray-500 hover:text-[var(--foreground)] dark:hover:text-white'
+                                            ? 'text-[var(--foreground)] font-bold'
+                                            : 'text-[var(--foreground)] opacity-60 hover:text-[var(--foreground)] hover:opacity-100'
                                             }`}
                                     >
                                         {subsection.title}
@@ -138,7 +138,7 @@ export default function TableOfContents({ sections, bookTitle, author }: TableOf
                             className="lg:hidden fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-[var(--background)] z-50 shadow-2xl overflow-y-auto"
                         >
                             <div className="sticky top-0 bg-[var(--background)] border-b border-[var(--border)] px-6 py-4 flex items-center justify-between">
-                                <h2 className="font-serif font-bold text-lg text-[var(--foreground)] dark:text-white">Table of Contents</h2>
+                                <h2 className="font-serif font-bold text-lg text-[var(--foreground)]">Table of Contents</h2>
                                 <button
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className="p-2 hover:bg-[var(--input)] rounded-lg transition-colors text-[var(--foreground)]"
