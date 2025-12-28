@@ -31,7 +31,7 @@ export function Header() {
                 <div className="flex items-center gap-8">
                     {/* Logo/Heading */}
                     <a href="/" className="flex items-center gap-2 group">
-                        <div className="w-8 h-8 bg-black text-white flex items-center justify-center rounded-md font-serif font-bold text-xl transition-transform group-hover:scale-105">S</div>
+                        <div className="w-8 h-8 bg-black text-white flex items-center justify-center rounded-md font-serif font-bold text-xl transition-transform group-hover:scale-105 mr-5 md:mr-0">S</div>
                         <span className="font-serif font-bold text-xl tracking-tight text-gray-900 hidden lg:block">Summarix</span>
                     </a>
                 </div>
